@@ -86,6 +86,22 @@ footer { display: flex; justify-content: space-between; color: var(--muted); mar
 .collection:has([value="sold"]:checked) .art-grid .art-card:not(.sold),
 .collection:has([value="unavailable"]:checked) .art-grid .art-card:not(.unavailable) { display: none; }
 .empty { display: none; }
+.count::before { content: none !important; }
+.art-grid [hidden] { display: none !important; }
+.collection .empty:not([hidden]) { display: block; grid-column: 1 / -1; }
+.studio-empty { grid-column: 1 / -1; padding: 22px; border: 1px dashed var(--line); border-radius: 14px; color: var(--muted); }
+.form-message { min-height: 1.5em; color: #356c4e; font-size: 14px; }
+.form-message.error { color: #9b3027; }
+.notice { margin-bottom: 20px; padding: 14px 18px; border: 1px solid #a9c9b1; border-radius: 12px; background: #eef6ef; color: #285a39; }
+.admin-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 38px; }
+.admin-form { padding: 26px; }
+.admin-form h2 { margin-bottom: 18px; font-size: 27px; }
+.admin-form .form-grid { gap: 14px; }
+.admin-form button { justify-self: start; }
+.sale-note { font-size: 14px; }
+.admin-list-item { display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-top: 1px solid var(--line); }
+.exhibition-card { padding: 18px; margin-top: 14px; }
+.exhibition-card h3, .exhibition-card p { margin-top: 10px; }
 .collection:has([value="painting"]:checked):has([value="unavailable"]:checked) .empty,
 .collection:has([value="photo"]:checked):has(:is([value="available"], [value="sold"]):checked) .empty { display: block; grid-column: 1 / -1; }
 .count::before { content: "4 "; }
@@ -195,7 +211,8 @@ figcaption { margin-top: 14px; }
   .feature .panel { padding: 24px; }
   .feature h2 { font-size: 32px; }
   .feature .pill { min-width: 0; margin-top: 20px; }
-  .art-grid, .pair, .studio-grid, .metrics { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+  .art-grid, .pair, .studio-grid, .metrics, .admin-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+  .admin-form { padding: 20px; }
   .sale { grid-column: 1 / -1; }
   .detail-copy { padding-top: 0; }
   .artist-profile { gap: 20px; }
@@ -206,6 +223,7 @@ figcaption { margin-top: 14px; }
   .filters .pill { padding-inline: 10px; }
   .artist-profile { grid-template-columns: 1fr; }
   .purchase { gap: 14px; padding: 14px; }
+  .admin-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }

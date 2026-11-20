@@ -18,17 +18,18 @@
   <div class="intro"><p class="eyebrow">YOUR STUDIO / REGISTER ARTWORK</p><h1>Let your work be seen.</h1><p class="lead">Add the details that help people connect with your piece.</p></div>
 
 <section class="work-form split"><figure><img class="art " src="assets/bloom.png" alt="Sample artwork preview"><figcaption>Artwork preview</figcaption></figure>
-<form class="form form-grid" action="studio.html">
-<label class="wide" for="artwork-image-url">Artwork image URL<input type="url" id="artwork-image-url" placeholder="https://example.com/my-artwork.jpg" value=""></label>
-<label class="" for="artwork-title">Artwork title<input type="text" id="artwork-title" placeholder="" value="In full bloom"></label><label class="" for="medium">Medium<input type="text" id="medium" placeholder="" value="Oil painting"></label>
-<label class="" for="creation-year">Creation year<input type="number" id="creation-year" placeholder="" value="2026"></label><label class="" for="asking-price">Asking price (USD)<input type="text" id="asking-price" placeholder="" value="180.00"></label>
-<label class="wide" for="description">Description<input type="text" id="description" placeholder="" value="A study of growth, belonging and moments that feel like home."></label>
-<label class="wide">Availability<select><option>Available</option><option>Not for sale</option><option>Sold</option></select></label>
+<form class="form form-grid" data-form="artwork">
+<label class="wide" for="artwork-image-url">Artwork image URL<input type="url" id="artwork-image-url" name="imageUrl" placeholder="https://example.com/my-artwork.jpg" required></label>
+<label for="artwork-title">Artwork title<input type="text" id="artwork-title" name="title" required maxlength="160"></label><label for="medium">Medium<input type="text" id="medium" name="medium" placeholder="Oil painting, photography…" required maxlength="100"></label>
+<label for="creation-year">Creation year<input type="number" id="creation-year" name="year" min="1901" max="2155" required></label><label for="asking-price">Asking price (USD)<input type="number" id="asking-price" name="price" min="0" step="0.01" placeholder="Leave blank if not for sale"></label>
+<label class="wide" for="description">Description<textarea id="description" name="description" maxlength="1000" required></textarea></label>
+<label class="wide" for="availability">Availability<select id="availability" name="availability"><option value="Available">Available</option><option value="Not for Sale">Not for sale</option></select></label>
 <div class="actions wide"><button class="pill solid">Register artwork →</button><a class="pill" href="studio.html">Back to studio</a></div>
-<small class="wide">Demo only. Changes are not saved.</small>
+<p class="form-message wide" role="status" aria-live="polite"></p><small class="wide">Artwork information is saved in this browser for the prototype.</small>
 </form></section>
 </main>
 <footer><span>MORGAN STATE UNIVERSITY</span><span>Art, stories and a place to belong.</span></footer>
 </div>
+<script src="app.js" defer></script>
 </body>
 </html>

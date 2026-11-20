@@ -18,15 +18,16 @@
   <div class="intro"><p class="eyebrow">YOUR STUDIO / PROFILE</p><h1>Tell your story.</h1><p class="lead">Your profile helps visitors meet the person behind the work.</p></div>
 
 <section class="work-form split"><img class="art " src="assets/roots.png" alt="Sample profile artwork">
-<form class="form" action="studio.html">
-<label class="" for="display-name">Display name<input type="text" id="display-name" placeholder="" value="Amina Brooks"></label><label class="" for="preferred-art-medium">Preferred art medium<input type="text" id="preferred-art-medium" placeholder="" value="Painting"></label>
-<label class="" for="profile-photo-url">Profile photo URL (optional)<input type="url" id="profile-photo-url" placeholder="Add a link to your photo" value=""></label>
-<label class="" for="biography">Biography<textarea id="biography" placeholder="">I explore belonging through color, memory and the natural world.</textarea></label>
-<div class="actions"><button class="pill solid">Save profile</button><a class="pill" href="artists.html#amina-brooks">Preview artist profile</a></div>
-<small>Demo only. Changes are not saved.</small>
+<form class="form" data-form="profile">
+<label for="display-name">Display name<input type="text" id="display-name" name="displayName" maxlength="120" required></label><label for="preferred-art-medium">Preferred art medium<input type="text" id="preferred-art-medium" name="medium" maxlength="100" required></label>
+<label for="profile-photo-url">Profile photo URL (optional)<input type="url" id="profile-photo-url" name="photoUrl" placeholder="Add a link to your photo"></label>
+<label for="biography">Biography<textarea id="biography" name="biography" maxlength="2000" required></textarea></label>
+<div class="actions"><button class="pill solid">Save profile</button><a class="pill" href="artists.html">Preview artist profile</a></div>
+<p class="form-message" role="status" aria-live="polite"></p><small>Profile edits are saved in this browser for the prototype.</small>
 </form></section>
 </main>
 <footer><span>MORGAN STATE UNIVERSITY</span><span>Art, stories and a place to belong.</span></footer>
 </div>
+<script src="app.js" defer></script>
 </body>
 </html>

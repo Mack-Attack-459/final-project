@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery administration | Campus Artwork Exhibit</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-admin">
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+<header class="header">
+  <a href="index.html" class="brand"><strong>CAE</strong><span>CAMPUS ARTWORK EXHIBIT</span></a>
+  <nav aria-label="Main navigation"><a href="discover.html">Discover</a><a href="collection.html">Collection</a><a href="exhibition.html">Exhibitions</a><a href="artists.html">Artists</a></nav>
+  <a class="pill" href="account.html">My account</a>
+</header>
+<main id="main">
+  <div class="intro"><p class="eyebrow">GALLERY COORDINATOR</p><h1>Gallery administration.</h1><p class="lead">Manage locations and exhibitions, and record completed artwork sales.</p></div>
+  <section class="admin-grid">
+    <form class="form panel admin-form" data-admin-form="location"><h2>Add a location</h2>
+      <label for="location-name">Gallery name<input id="location-name" name="name" maxlength="120" required></label>
+      <label for="location-building">Building<input id="location-building" name="building" maxlength="120" required></label>
+      <label for="location-room">Room<input id="location-room" name="room" maxlength="30" required></label>
+      <label for="location-address">Street address<input id="location-address" name="address" maxlength="255" required></label>
+      <button class="pill solid">Save location</button><p class="form-message" role="status" aria-live="polite"></p>
+    </form>
+    <form class="form panel admin-form" data-admin-form="exhibition"><h2>Create an exhibition</h2>
+      <label for="exhibition-location">Location<select id="exhibition-location" name="locationId" required><option value="">Choose a location</option></select></label>
+      <label for="exhibition-title">Title<input id="exhibition-title" name="title" maxlength="160" required></label>
+      <label for="exhibition-description">Description<textarea id="exhibition-description" name="description" required></textarea></label>
+      <div class="form-grid"><label for="exhibition-start">Starts<input id="exhibition-start" name="startDate" type="date" required></label><label for="exhibition-end">Ends<input id="exhibition-end" name="endDate" type="date" required></label></div>
+      <label for="exhibition-status">Status<select id="exhibition-status" name="status"><option>Planned</option><option>Open</option><option>Closed</option></select></label>
+      <button class="pill solid">Save exhibition</button><p class="form-message" role="status" aria-live="polite"></p>
+    </form>
+    <form class="form panel admin-form" data-admin-form="sale"><h2>Record a completed sale</h2>
+      <label for="sale-artwork">Available artwork<select id="sale-artwork" name="artworkId" required><option value="">Choose artwork</option></select></label>
+      <label for="sale-customer">Customer<select id="sale-customer" name="customerId" required><option value="">Choose customer</option></select></label>
+      <p class="sale-note">The sale uses the artwork's listed price. The database records the sale and marks the artwork sold.</p>
+      <button class="pill solid">Record sale</button><p class="form-message" role="status" aria-live="polite"></p>
+    </form>
+    <form class="form panel admin-form" data-admin-form="placement"><h2>Place artwork in an exhibition</h2>
+      <label for="placement-exhibition">Exhibition<select id="placement-exhibition" name="exhibitionId" required><option value="">Choose an exhibition</option></select></label>
+      <label for="placement-artwork">Artwork<select id="placement-artwork" name="artworkId" required><option value="">Choose artwork</option></select></label>
+      <label for="placement-label">Display label<input id="placement-label" name="label" maxlength="255" required></label>
+      <label for="placement-position">Display position<input id="placement-position" name="position" type="number" min="1" value="1" required></label>
+      <button class="pill solid">Save placement</button><p class="form-message" role="status" aria-live="polite"></p>
+    </form>
+    <section class="panel admin-form"><h2>Current exhibitions</h2><div data-admin-list="exhibitions"><p>Loading exhibitions…</p></div></section>
+  </section>
+</main>
+<footer><span>MORGAN STATE UNIVERSITY</span><span>Art, stories and a place to belong.</span></footer>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

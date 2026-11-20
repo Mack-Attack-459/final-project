@@ -18,14 +18,18 @@
   <div class="intro"><p class="eyebrow">YOUR COMMUNITY, YOUR CANVAS</p><h1>Create your account.</h1></div>
 
 <section class="auth split"><img class="art " src="assets/auth.png" alt="Sample gallery artwork">
-<form action="account.html" class="form auth-form" aria-describedby="demo-note">
-<p class="auth-logo">COA</p><h2>Create Account</h2>
-<label class="" for="email-address">Email address<input type="email" id="email-address" placeholder="Enter your email" value=""></label><label class="" for="password">Password<input type="password" id="password" placeholder="••••••••••••" value=""></label>
+<form class="form auth-form" data-form="signup" aria-describedby="demo-note">
+<p class="auth-logo">CAE</p><h2>Create Account</h2>
+<label for="first-name">First name<input type="text" id="first-name" name="firstName" autocomplete="given-name" required></label>
+<label for="last-name">Last name<input type="text" id="last-name" name="lastName" autocomplete="family-name" required></label>
+<label for="account-role">I am joining as<select id="account-role" name="role" required><option value="Artist">Artist</option><option value="Customer">Visitor / Customer</option></select></label>
+<label for="email-address">Email address<input type="email" id="email-address" name="email" placeholder="Enter your email" autocomplete="email" required></label><label for="password">Password<input type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required></label>
 <button class="pill solid">Create account</button>
-<a class="form-switch" href="sign-in.html">Already registered? Sign in</a><small id="demo-note">Demo only. Use sample details.</small>
+<p class="form-message" role="status" aria-live="polite"></p><a class="form-switch" href="sign-in.html">Already registered? Sign in</a><small id="demo-note">Prototype account data is saved in this browser for the demo.</small>
 </form></section>
 </main>
 <footer><span>MORGAN STATE UNIVERSITY</span><span>Art, stories and a place to belong.</span></footer>
 </div>
+<script src="app.js" defer></script>
 </body>
 </html>
